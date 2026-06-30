@@ -62,6 +62,14 @@ export default defineConfig({
           { text: 'Keyframe Animations', link: '/effects/animation' },
           { text: 'Dark Mode', link: '/effects/dark-mode' }
         ]
+      },
+      {
+        text: 'Tahap 6: Forms & Filters',
+        collapsed: false,
+        items: [
+          { text: 'Form Styling', link: '/forms/' },
+          { text: 'Filters & Blur', link: '/filters/' }
+        ]
       }
     ],
     socialLinks: [
