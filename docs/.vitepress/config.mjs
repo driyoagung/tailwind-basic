@@ -52,6 +52,16 @@ export default defineConfig({
           { text: 'Basic State (Hover, Focus)', link: '/interaction/' },
           { text: 'Advanced (Group & Peer)', link: '/interaction/group-peer' }
         ]
+      },
+      {
+        text: 'Tahap 5: Effects & Dark Mode',
+        collapsed: false,
+        items: [
+          { text: 'Transitions', link: '/effects/' },
+          { text: 'Transform', link: '/effects/transform' },
+          { text: 'Keyframe Animations', link: '/effects/animation' },
+          { text: 'Dark Mode', link: '/effects/dark-mode' }
+        ]
       }
     ],
     socialLinks: [
