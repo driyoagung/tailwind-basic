@@ -35,6 +35,15 @@ export default defineConfig({
           { text: 'Grid Layout', link: '/layout/grid' },
           { text: 'Overflow & Object Fit', link: '/layout/overflow-object' }
         ]
+      },
+      {
+        text: 'Tahap 3: Responsive Design',
+        collapsed: false,
+        items: [
+          { text: 'Utilities & Breakpoints', link: '/responsive/' },
+          { text: 'Container & Centering', link: '/responsive/container' },
+          { text: 'Responsive Layout', link: '/responsive/layout' }
+        ]
       }
     ],
     socialLinks: [
