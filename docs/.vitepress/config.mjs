@@ -44,6 +44,14 @@ export default defineConfig({
           { text: 'Container & Centering', link: '/responsive/container' },
           { text: 'Responsive Layout', link: '/responsive/layout' }
         ]
+      },
+      {
+        text: 'Tahap 4: State & Interaction',
+        collapsed: false,
+        items: [
+          { text: 'Basic State (Hover, Focus)', link: '/interaction/' },
+          { text: 'Advanced (Group & Peer)', link: '/interaction/group-peer' }
+        ]
       }
     ],
     socialLinks: [
