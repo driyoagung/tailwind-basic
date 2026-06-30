@@ -25,6 +25,16 @@ export default defineConfig({
           { text: 'Border & Shadow', link: '/fundamental/border-shadow' },
           { text: 'Background', link: '/fundamental/background' }
         ]
+      },
+      {
+        text: 'Tahap 2: Layout',
+        collapsed: false,
+        items: [
+          { text: 'Display, Position, & Z-Index', link: '/layout/display-position' },
+          { text: 'Flexbox', link: '/layout/flexbox' },
+          { text: 'Grid Layout', link: '/layout/grid' },
+          { text: 'Overflow & Object Fit', link: '/layout/overflow-object' }
+        ]
       }
     ],
     socialLinks: [
