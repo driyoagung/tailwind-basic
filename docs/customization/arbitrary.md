@@ -1,3 +1,8 @@
+---
+title: Arbitrary Values & Custom Utilities
+description: Nilai arbitrary, arbitrary variant, custom utility dengan @utility, dan @apply.
+---
+
 # Arbitrary Values & Custom Utilities
 
 Terkadang, Anda membutuhkan nilai yang sangat spesifik — misalnya lebar `743px` atau warna HEX dari desain Figma klien — yang tidak ada di *default palette* Tailwind. Di sinilah fitur **Arbitrary Value** sangat berguna.
@@ -17,22 +22,7 @@ Contoh:
 - `grid-cols-[200px_1fr_200px]` → kolom grid custom
 - `top-[calc(100%-2rem)]` → posisi kalkulasi
 
-```html
-<div class="flex gap-4 items-end">
-  <div class="w-[120px] h-[80px] bg-[#e11d48] rounded-[12px] flex items-center justify-center text-white font-bold text-sm">
-    120 x 80px
-  </div>
-  <div class="w-[200px] h-[60px] bg-[#7c3aed] rounded-[50px] flex items-center justify-center text-white font-bold text-sm">
-    200 x 60px (Pil)
-  </div>
-  <div class="w-[150px] h-[150px] bg-[linear-gradient(135deg,_#667eea_0%,_#764ba2_100%)] rounded-full flex items-center justify-center text-white font-bold text-sm text-center p-2">
-    Gradient Kustom
-  </div>
-</div>
-```
-
-<div class="preview-box">
-<div class="flex flex-wrap gap-4 items-end">
+<Preview :html='`<div class="flex flex-wrap gap-4 items-end">
   <div class="w-[120px] h-[80px] bg-[#e11d48] rounded-[12px] flex items-center justify-center text-white font-bold text-sm shadow-md">
     120 x 80px
   </div>
@@ -42,8 +32,7 @@ Contoh:
   <div class="w-[150px] h-[150px] bg-[linear-gradient(135deg,_#667eea_0%,_#764ba2_100%)] rounded-full flex items-center justify-center text-white font-bold text-sm text-center p-2 shadow-md">
     Gradient Kustom
   </div>
-</div>
-</div>
+</div>`' />
 
 ---
 
@@ -56,25 +45,13 @@ Contoh umum:
 - `[&:nth-child(odd)]:bg-gray-100` → Baris ganjil berwarna abu
 - `[&_p]:text-sm` → Setiap `<p>` di dalam elemen ini berukuran kecil
 
-```html
-<ul class="space-y-0 [&>li]:p-3 [&>li]:border-b [&>li:last-child]:border-0 [&>li:nth-child(odd)]:bg-gray-50 [&>li:hover]:bg-blue-50 border rounded-lg overflow-hidden">
+<Preview :html='`<ul class="space-y-0 [&>li]:p-3 [&>li]:border-b [&>li:last-child]:border-0 [&>li:nth-child(odd)]:bg-gray-50 [&>li:hover]:bg-blue-50 [&>li]:transition border rounded-lg overflow-hidden cursor-pointer">
   <li>Item Pertama (ganjil → abu)</li>
   <li>Item Kedua (genap → putih)</li>
   <li>Item Ketiga (ganjil → abu)</li>
   <li>Item Keempat (genap → putih)</li>
   <li>Item Kelima (ganjil → abu)</li>
-</ul>
-```
-
-<div class="preview-box">
-<ul class="space-y-0 [&>li]:p-3 [&>li]:border-b [&>li:last-child]:border-0 [&>li:nth-child(odd)]:bg-gray-50 [&>li:hover]:bg-blue-50 [&>li]:transition border rounded-lg overflow-hidden cursor-pointer">
-  <li>Item Pertama (ganjil → abu)</li>
-  <li>Item Kedua (genap → putih)</li>
-  <li>Item Ketiga (ganjil → abu)</li>
-  <li>Item Keempat (genap → putih)</li>
-  <li>Item Kelima (ganjil → abu)</li>
-</ul>
-</div>
+</ul>`' />
 
 ---
 

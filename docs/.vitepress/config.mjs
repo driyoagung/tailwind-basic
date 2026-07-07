@@ -3,16 +3,55 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   title: 'Tailwind Basic',
-  description: 'Dokumentasi dan Panduan Belajar Tailwind CSS',
+  description: 'Dokumentasi dan Panduan Belajar Tailwind CSS dalam Bahasa Indonesia',
   vite: {
     plugins: [
       tailwindcss(),
     ],
   },
   themeConfig: {
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: 'Cari',
+            buttonAriaLabel: 'Cari'
+          },
+          modal: {
+            noResultsText: 'Tidak ada hasil',
+            resetButtonTitle: 'Hapus pencarian',
+            footer: {
+              selectText: 'Pilih',
+              navigateText: 'Navigasi',
+              closeText: 'Tutup'
+            }
+          }
+        }
+      }
+    },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Fundamental', link: '/fundamental/' }
+      { text: 'Fundamental', link: '/fundamental/' },
+      { text: 'Layout', link: '/layout/flexbox' },
+      { text: 'Responsive', link: '/responsive/' },
+      {
+        text: 'Lanjutan',
+        items: [
+          { text: 'State & Interaction', link: '/interaction/' },
+          { text: 'Effects & Dark Mode', link: '/effects/' },
+          { text: 'Forms & Filters', link: '/forms/' },
+          { text: 'Customization', link: '/customization/' }
+        ]
+      },
+      {
+        text: 'Praktik',
+        items: [
+          { text: 'Reusable Components', link: '/components/' },
+          { text: 'Layout Projects', link: '/projects/' },
+          { text: 'Roadmap Lengkap', link: '/spek' }
+        ]
+      }
     ],
     sidebar: [
       {
@@ -70,10 +109,75 @@ export default defineConfig({
           { text: 'Form Styling', link: '/forms/' },
           { text: 'Filters & Blur', link: '/filters/' }
         ]
+      },
+      {
+        text: 'Tahap 7: Customization',
+        collapsed: true,
+        items: [
+          { text: 'Theme Configuration', link: '/customization/' },
+          { text: 'Plugins', link: '/customization/plugins' },
+          { text: 'Custom Utility & Arbitrary', link: '/customization/arbitrary' }
+        ]
+      },
+      {
+        text: 'Tahap 8: Reusable Components',
+        collapsed: true,
+        items: [
+          { text: 'Button, Badge & Alert', link: '/components/' },
+          { text: 'Card & Modal', link: '/components/card-modal' },
+          { text: 'Data Display', link: '/components/data-display' },
+          { text: 'Navigation', link: '/components/navigation' }
+        ]
+      },
+      {
+        text: 'Tahap 9: Layout Projects',
+        collapsed: true,
+        items: [
+          { text: 'Auth Pages (Login & Register)', link: '/projects/' },
+          { text: 'Dashboard Admin', link: '/projects/dashboard' },
+          { text: 'Landing Page', link: '/projects/landing-page' },
+          { text: 'Blog Layout', link: '/projects/blog' },
+          { text: 'E-Commerce Layout', link: '/projects/e-commerce' }
+        ]
+      },
+      {
+        text: 'Tahap 10: Best Practice',
+        collapsed: true,
+        items: [
+          { text: 'Best Practice', link: '/best-practice/' }
+        ]
+      },
+      {
+        text: 'Tahap 11: Framework Integration',
+        collapsed: true,
+        items: [
+          { text: 'Laravel, Vue.js & React', link: '/framework-integration/' }
+        ]
+      },
+      {
+        text: 'Referensi',
+        collapsed: true,
+        items: [
+          { text: 'Roadmap Lengkap', link: '/spek' }
+        ]
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/driyoagung/tailwind-basic' }
+    ],
+    editLink: {
+      pattern: 'https://github.com/driyoagung/tailwind-basic/edit/main/docs',
+      text: 'Edit halaman ini di GitHub'
+    },
+    lastUpdated: {
+      text: 'Diperbarui'
+    },
+    outline: {
+      label: 'Di halaman ini'
+    },
+    docFooter: {
+      prev: 'Sebelumnya',
+      next: 'Berikutnya'
+    }
   }
 })

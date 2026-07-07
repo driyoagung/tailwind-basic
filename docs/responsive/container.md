@@ -1,3 +1,8 @@
+---
+title: "Container & Centering Layout"
+description: "Cara menggunakan container dan memposisikan konten ke tengah dengan mx-auto serta flexbox."
+---
+
 # Container & Centering Layout
 
 Meskipun website kita responsif, kita tidak ingin teks atau artikel membentang penuh 100% dari ujung kiri ke kanan di layar monitor raksasa (24 inci ke atas) karena akan sangat sulit dibaca.
@@ -21,24 +26,13 @@ Class `container` di Tailwind secara otomatis mengubah nilai `max-width` menyesu
 
 Untuk membuat wadah (container) berada tepat di tengah-tengah layar, selalu gabungkan class `container` dengan `mx-auto` (margin sumbu-X: otomatis kiri-kanan).
 
-```html
-<!-- Buka layar penuh lalu ciutkan pelan-pelan -->
-<div class="bg-gray-200 min-h-32 p-4">
-  <div class="container mx-auto bg-blue-500 text-white p-4 text-center rounded">
-    Saya adalah div dengan "container mx-auto".<br>
-    Saya tidak akan membentang penuh di layar besar, melainkan berhenti pada ukuran tertentu dan memposisikan diri di tengah.
-  </div>
-</div>
-```
-
-<div class="preview-box">
-<div class="bg-gray-200 min-h-32 p-4">
+<Preview :html='`<div class="bg-gray-200 min-h-32 p-4">
+  <!-- Buka layar penuh lalu ciutkan pelan-pelan -->
   <div class="container mx-auto bg-blue-500 text-white p-4 text-center rounded font-medium shadow-lg">
     Saya adalah div dengan "container mx-auto".<br>
     Saya tidak akan membentang penuh di layar besar, melainkan berhenti pada ukuran tertentu dan memposisikan diri di tengah.
   </div>
-</div>
-</div>
+</div>`' />
 
 ---
 
@@ -46,22 +40,10 @@ Untuk membuat wadah (container) berada tepat di tengah-tengah layar, selalu gabu
 
 Jika Anda ingin menengahkan konten (misalnya form login) tepat di tengah layar baik secara horizontal (kiri-kanan) maupun vertikal (atas-bawah), gabungkan `h-screen` dan utilitas flexbox.
 
-```html
-<div class="flex items-center justify-center bg-slate-800 p-8 h-48 rounded-xl shadow-inner">
-  <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
-    <h2 class="text-2xl font-bold mb-4">Login</h2>
-    <input type="text" class="w-full border p-2 mb-4 rounded" placeholder="Username">
-    <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700">Masuk</button>
-  </div>
-</div>
-```
-
-<div class="preview-box">
-<div class="flex items-center justify-center bg-slate-800 p-8 h-64 rounded-xl shadow-inner">
+<Preview :html='`<div class="flex items-center justify-center bg-slate-800 p-8 h-64 rounded-xl shadow-inner">
   <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
     <h2 class="text-2xl font-bold mb-4">Login</h2>
     <input type="text" class="w-full border p-2 mb-4 rounded focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Username">
     <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700">Masuk</button>
   </div>
-</div>
-</div>
+</div>`' />

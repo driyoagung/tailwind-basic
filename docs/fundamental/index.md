@@ -1,3 +1,8 @@
+---
+title: Pengenalan Tailwind CSS
+description: Pengenalan framework CSS utility-first Tailwind dan keunggulannya.
+---
+
 # Pengenalan Tailwind CSS
 
 Selamat datang di materi dasar Tailwind CSS! Tailwind adalah sebuah *framework CSS* yang sangat populer karena pendekatannya yang unik: **Utility-First**.
@@ -23,34 +28,18 @@ Contoh:
 Mari kita lihat perbedaan antara HTML biasa tanpa *styling* dengan HTML yang menggunakan kelas-kelas utilitas Tailwind CSS.
 
 ### Kode HTML Biasa Tanpa Tailwind
-```html
-<div>
-  <h2>Selamat Datang!</h2>
-  <p>Ini adalah tampilan biasa tanpa styling apapun.</p>
-</div>
-```
 
-<div class="preview-box">
-<div>
+<Preview :html='`<div>
   <h2>Selamat Datang!</h2>
   <p>Ini adalah tampilan biasa tanpa styling apapun.</p>
-</div>
-</div>
+</div>`' />
 
 ### Kode dengan Tailwind CSS
-```html
-<div class="bg-blue-100 border border-blue-500 p-6 rounded-xl shadow-md text-center max-w-sm mx-auto">
-  <h2 class="text-2xl font-bold text-blue-800 mb-2">Selamat Datang!</h2>
-  <p class="text-blue-600">Ini adalah tampilan cantik menggunakan utility-first Tailwind CSS.</p>
-</div>
-```
 
-<div class="preview-box">
-<div class="bg-blue-100 border border-blue-500 p-6 rounded-xl shadow-md text-center max-w-sm mx-auto">
+<Preview :html='`<div class="bg-blue-100 border border-blue-500 p-6 rounded-xl shadow-md text-center max-w-sm mx-auto">
   <h2 class="text-2xl font-bold text-blue-800 mb-2">Selamat Datang!</h2>
   <p class="text-blue-600">Ini adalah tampilan cantik menggunakan utility-first Tailwind CSS.</p>
-</div>
-</div>
+</div>`' />
 
 > **Tip:** Coba ubah angka pada `bg-blue-100` menjadi `bg-red-100` di lingkungan lokal Anda, dan lihat warnanya berubah seketika! Tailwind menggunakan skala warna dari `50` (paling terang) hingga `950` (paling gelap).
 
