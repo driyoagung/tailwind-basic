@@ -1,3 +1,8 @@
+---
+title: Display, Position & Z-Index
+description: Memahami display, position (relative, absolute, fixed, sticky), dan z-index di Tailwind CSS.
+---
+
 # Display, Position & Z-Index
 
 Bagian Layout (tata letak) adalah bagian terpenting dalam membangun struktur website. Kita akan mulai dari properti dasar untuk mengontrol bagaimana sebuah elemen dirender di layar.
@@ -13,29 +18,15 @@ Properti `display` menentukan sifat dasar dari sebuah elemen.
 - `inline-block`: Gabungan dari keduanya. Bisa bersebelahan tapi kita bisa mengatur `width` dan `height`-nya.
 - `hidden`: Menghilangkan elemen dari layar (sama dengan `display: none`).
 
-```html
-<div class="space-y-4">
+<Preview :html='`<div class="space-y-4">
   <div class="block bg-blue-200 p-2">Elemen Block 1</div>
   <div class="block bg-blue-200 p-2">Elemen Block 2 (Pasti turun baris)</div>
-  
-  <div class="mt-4">
-    <span class="inline bg-green-200 p-2">Elemen Inline 1</span>
-    <span class="inline bg-green-200 p-2">Elemen Inline 2 (Bersebelahan)</span>
-  </div>
-</div>
-```
 
-<div class="preview-box">
-<div class="space-y-4">
-  <div class="block bg-blue-200 p-2">Elemen Block 1</div>
-  <div class="block bg-blue-200 p-2">Elemen Block 2 (Pasti turun baris)</div>
-  
   <div class="mt-4">
     <span class="inline bg-green-200 p-2">Elemen Inline 1</span>
     <span class="inline bg-green-200 p-2">Elemen Inline 2 (Bersebelahan)</span>
   </div>
-</div>
-</div>
+</div>`' />
 
 ---
 
@@ -50,33 +41,16 @@ Positioning memungkinkan Anda "mengeluarkan" elemen dari alur normal dokumen dan
 
 ### Contoh Relative & Absolute
 
-```html
-<!-- Parent harus relative -->
-<div class="relative w-full h-32 bg-gray-200 border-2 border-dashed border-gray-400">
-  
+<Preview :html='`<!-- Parent harus relative -->
+<div class="relative w-full h-32 bg-gray-200 border-2 border-dashed border-gray-400 font-medium text-sm">
   <div class="absolute top-0 left-0 bg-red-500 text-white p-2">Top Left</div>
   <div class="absolute top-0 right-0 bg-green-500 text-white p-2">Top Right</div>
-  
   <!-- Centering Absolute: kombinasi left-1/2, top-1/2, dan -translate (transform) -->
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white p-2 rounded">
     Tengah Sempurna
   </div>
-  
   <div class="absolute bottom-0 right-0 bg-yellow-500 text-black p-2">Bottom Right</div>
-  
-</div>
-```
-
-<div class="preview-box">
-<div class="relative w-full h-32 bg-gray-200 border-2 border-dashed border-gray-400 font-medium text-sm">
-  <div class="absolute top-0 left-0 bg-red-500 text-white p-2">Top Left</div>
-  <div class="absolute top-0 right-0 bg-green-500 text-white p-2">Top Right</div>
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white p-2 rounded">
-    Tengah Sempurna
-  </div>
-  <div class="absolute bottom-0 right-0 bg-yellow-500 text-black p-2">Bottom Right</div>
-</div>
-</div>
+</div>`' />
 
 ---
 
@@ -86,18 +60,8 @@ Ketika ada beberapa elemen yang melayang (`absolute` atau `fixed`), elemen mana 
 
 Di Tailwind: `z-0`, `z-10`, `z-20`, `z-30`, `z-40`, `z-50`, dan `z-auto`.
 
-```html
-<div class="relative h-32">
-  <div class="absolute top-4 left-4 w-24 h-24 bg-red-400 z-10 flex items-center justify-center font-bold">z-10</div>
-  <div class="absolute top-8 left-12 w-24 h-24 bg-blue-400 z-30 flex items-center justify-center font-bold shadow-xl">z-30</div>
-  <div class="absolute top-12 left-20 w-24 h-24 bg-green-400 z-20 flex items-center justify-center font-bold">z-20</div>
-</div>
-```
-
-<div class="preview-box">
-<div class="relative h-32 text-white">
+<Preview :html='`<div class="relative h-32 text-white">
   <div class="absolute top-4 left-4 w-24 h-24 bg-red-400 z-10 flex items-center justify-center font-bold shadow-md rounded">z-10</div>
   <div class="absolute top-8 left-12 w-24 h-24 bg-blue-400 z-30 flex items-center justify-center font-bold shadow-xl rounded">z-30 (Atas)</div>
   <div class="absolute top-12 left-20 w-24 h-24 bg-green-400 z-20 flex items-center justify-center font-bold shadow-md rounded">z-20</div>
-</div>
-</div>
+</div>`' />

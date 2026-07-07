@@ -1,3 +1,8 @@
+---
+title: Plugins
+description: "Plugin resmi Tailwind: typography, forms, aspect ratio, dan line clamp."
+---
+
 # Plugins
 
 Tailwind CSS memiliki ekosistem *plugin* resmi yang memperluas kemampuan *framework*. Plugin menambahkan utilitas baru yang tidak ada di *core* Tailwind.
@@ -58,27 +63,14 @@ Cukup gunakan:
 - `aspect-square` (1:1)
 - `aspect-auto` (Otomatis)
 
-```html
-<div class="grid grid-cols-2 gap-4 max-w-lg">
+<Preview :html='`<div class="grid grid-cols-2 gap-4 max-w-lg">
   <div class="aspect-square bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold shadow-md">
     1:1 (Square)
   </div>
   <div class="aspect-video bg-rose-500 rounded-lg flex items-center justify-center text-white font-bold shadow-md">
     16:9 (Video)
   </div>
-</div>
-```
-
-<div class="preview-box">
-<div class="grid grid-cols-2 gap-4 max-w-lg">
-  <div class="aspect-square bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold shadow-md">
-    1:1 (Square)
-  </div>
-  <div class="aspect-video bg-rose-500 rounded-lg flex items-center justify-center text-white font-bold shadow-md">
-    16:9 (Video)
-  </div>
-</div>
-</div>
+</div>`' />
 
 ---
 
@@ -90,22 +82,10 @@ Di Tailwind v4, ini sudah **built-in** dan tidak perlu plugin:
 - `line-clamp-1`, `line-clamp-2`, `line-clamp-3`, ...
 - `line-clamp-none` (menghilangkan pembatasan)
 
-```html
-<div class="max-w-sm bg-white border rounded-lg p-4 shadow-sm">
+<Preview :html='`<div class="max-w-sm bg-white border rounded-lg p-4 shadow-sm">
   <h3 class="font-bold mb-2">Artikel Panjang</h3>
-  
   <!-- Teks dibatasi menjadi 3 baris saja -->
   <p class="text-gray-600 text-sm line-clamp-3">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
   </p>
-</div>
-```
-
-<div class="preview-box">
-<div class="max-w-sm bg-white border rounded-lg p-4 shadow-sm">
-  <h3 class="font-bold mb-2">Artikel Panjang</h3>
-  <p class="text-gray-600 text-sm line-clamp-3">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-  </p>
-</div>
-</div>
+</div>`' />

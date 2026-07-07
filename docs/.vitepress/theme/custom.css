@@ -1,17 +1,40 @@
 @import "tailwindcss";
 
-/* Kotak Preview Custom untuk Materi Tailwind */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ponytail: @theme block berisi token brand agar demo customization (bg-brand, font-heading, dll.) benar-benar render. Tambah token baru di sini saat dibutuhkan. */
+@theme {
+  --color-brand: #6366f1;
+  --color-brand-light: #a5b4fc;
+  --color-brand-dark: #4338ca;
+
+  --font-heading: "Inter", sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  --radius-4xl: 2rem;
+
+  --shadow-brutal: 4px 4px 0px 0px #000;
+  --shadow-glow: 0 0 15px rgba(99, 102, 241, 0.5);
+}
+
+/* Kotak Preview Custom (fallback, jika belum pakai komponen Preview.vue) */
 .preview-box {
   padding: 1.5rem;
+  color-scheme: light;
+  background-color: #f3f4f6;
+  color: #111827;
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
-  margin-top: -1rem; /* Merapatkan dengan code block di atasnya */
+  margin-top: -1rem;
   margin-bottom: 1.5rem;
-  background-color: var(--vp-c-bg-soft);
   overflow-x: auto;
 }
 
-/* Memperbaiki jarak elemen pertama dan terakhir dalam kotak preview */
 .preview-box > :first-child {
   margin-top: 0;
 }
@@ -19,7 +42,6 @@
   margin-bottom: 0;
 }
 
-/* Label kecil "Preview" di atas kotak */
 .preview-box::before {
   content: "HASIL PREVIEW:";
   display: block;

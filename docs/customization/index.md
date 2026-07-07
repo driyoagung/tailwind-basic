@@ -1,3 +1,8 @@
+---
+title: Theme Configuration
+description: Kustomisasi Tailwind CSS v4 lewat @theme block di file CSS — warna brand, font, spacing, radius, dan shadow custom.
+---
+
 # Theme Configuration (Kustomisasi)
 
 Tailwind CSS dirancang untuk bisa diubah sesuai kebutuhan desain proyek Anda. Di Tailwind v4, kustomisasi dilakukan langsung melalui file CSS menggunakan **CSS Custom Properties** (variabel CSS) dan direktif `@theme`.
@@ -39,21 +44,21 @@ Setelah didefinisikan, Anda bisa menggunakannya seperti class Tailwind biasa:
 Mari kita simulasikan penggunaan warna *brand* (misal perusahaan/startup Anda memiliki warna utama Indigo):
 
 ```html
-<!-- Warna 'brand' ini didefinisikan di @theme { --color-brand: #6366f1 } -->
-<div class="bg-indigo-600 text-white p-6 rounded-lg max-w-sm">
+<!-- Warna 'brand' didefinisikan di @theme { --color-brand: #6366f1 } pada custom.css -->
+<div class="bg-brand text-white p-6 rounded-lg max-w-sm">
   <h3 class="text-xl font-bold mb-2">Startup Kita</h3>
-  <p class="text-indigo-200 text-sm mb-4">Warna brand dapat dikustomisasi lewat @theme di Tailwind v4.</p>
-  <button class="bg-white text-indigo-700 font-bold px-4 py-2 rounded hover:bg-indigo-50 transition">
+  <p class="text-brand-light text-sm mb-4">Warna brand dapat dikustomisasi lewat @theme di Tailwind v4.</p>
+  <button class="bg-white text-brand-dark font-bold px-4 py-2 rounded hover:bg-brand-light transition">
     Pelajari Lebih
   </button>
 </div>
 ```
 
 <div class="preview-box">
-<div class="bg-indigo-600 text-white p-6 rounded-lg max-w-sm">
+<div class="bg-brand text-white p-6 rounded-lg max-w-sm">
   <h3 class="text-xl font-bold mb-2">Startup Kita</h3>
-  <p class="text-indigo-200 text-sm mb-4">Warna brand dapat dikustomisasi lewat @theme di Tailwind v4.</p>
-  <button class="bg-white text-indigo-700 font-bold px-4 py-2 rounded hover:bg-indigo-50 transition">
+  <p class="text-brand-light text-sm mb-4">Warna brand dapat dikustomisasi lewat @theme di Tailwind v4.</p>
+  <button class="bg-white text-brand-dark font-bold px-4 py-2 rounded hover:bg-brand-light transition">
     Pelajari Lebih
   </button>
 </div>
@@ -122,13 +127,13 @@ Hasil pemakaian: `p-18`, `w-88`, `rounded-4xl`.
 Contoh pemakaian `shadow-brutal` (efek *Brutalism Design*):
 
 ```html
-<div class="bg-yellow-300 p-6 border-2 border-black shadow-[4px_4px_0px_0px_#000] max-w-xs font-bold text-lg">
+<div class="bg-yellow-300 p-6 border-2 border-black shadow-brutal max-w-xs font-bold text-lg">
   Brutalist Design Card
 </div>
 ```
 
 <div class="preview-box">
-<div class="bg-yellow-300 p-6 border-2 border-black shadow-[4px_4px_0px_0px_#000] max-w-xs font-bold text-lg hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#000] transition-all cursor-pointer">
+<div class="bg-yellow-300 p-6 border-2 border-black shadow-brutal max-w-xs font-bold text-lg hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#000] transition-all cursor-pointer">
   Brutalist Design Card
 </div>
 </div>
