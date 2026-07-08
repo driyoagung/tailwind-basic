@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useCopy } from './useCopy'
 
 const props = defineProps({
@@ -10,8 +10,38 @@ const props = defineProps({
 
 const { copied, copy } = useCopy()
 const showCode = ref(true)
+const iframeHeight = ref(320)
 
 const escaped = computed(() => props.html.trim())
+
+const srcdoc = computed(() => `<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"><\/script>
+<style>html{color-scheme:light}body{margin:0;padding:1.5rem;font-family:system-ui,sans-serif;background:#f3f4f6}#__pvw{min-height:100px}</style>
+</head>
+<body>
+<div id="__pvw">${escaped.value}<\/div>
+<script>
+(function(){
+  function sendH(){var h=document.getElementById('__pvw').scrollHeight;parent.postMessage({type:'preview-resize',height:Math.max(h,80)},'*');}
+  sendH();
+  new ResizeObserver(sendH).observe(document.getElementById('__pvw'));
+})();
+<\/script>
+</body>
+</html>`)
+
+function onMessage(e) {
+  if (e.data && e.data.type === 'preview-resize') {
+    iframeHeight.value = e.data.height
+  }
+}
+
+onMounted(() => window.addEventListener('message', onMessage))
+onUnmounted(() => window.removeEventListener('message', onMessage))
 </script>
 
 <template>
@@ -37,7 +67,13 @@ const escaped = computed(() => props.html.trim())
     <pre v-if="showCode" class="preview-code"><code>{{ escaped }}</code></pre>
 
     <div v-show="!showCode" class="preview-box">
-      <div v-html="escaped"></div>
+      <iframe
+        class="preview-iframe"
+        :srcdoc="srcdoc"
+        :style="{ height: iframeHeight + 'px' }"
+        frameborder="0"
+        title="Preview"
+      ></iframe>
     </div>
   </div>
 </template>
@@ -106,19 +142,21 @@ const escaped = computed(() => props.html.trim())
   white-space: pre;
 }
 .preview-box {
-  padding: 1.5rem;
+  padding: 0;
   color-scheme: light;
   background-color: #f3f4f6;
   color: #111827;
-  overflow-x: auto;
   border: 1px solid var(--vp-c-divider);
   border-radius: 0 0 8px 8px;
 }
-.preview-box > :first-child {
-  margin-top: 0;
+.preview-box::before {
+  content: none;
 }
-.preview-box > :last-child {
-  margin-bottom: 0;
+.preview-iframe {
+  width: 100%;
+  border: none;
+  display: block;
+  transition: height 0.15s ease;
 }
 .preview-wrapper > .preview-code ~ .preview-box {
   border-top: none;
